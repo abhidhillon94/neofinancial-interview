@@ -9,5 +9,6 @@ describe('controllers test', () => {
             .map(layer => layer.route.path)
 
         expect(routes.includes('/')).toBe(true)
+        expect(routes.includes('/lotteryStatus')).toBe(true)
     })
 });
