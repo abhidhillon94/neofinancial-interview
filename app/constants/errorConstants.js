@@ -1,0 +1,8 @@
+const ERROR_VALIDATION_FAILED = 'ValidationFailed';
+
+const CODE_INVALID_INPUT = 'INVALID_INPUT';
+
+module.exports = {
+    ERROR_VALIDATION_FAILED,
+    CODE_INVALID_INPUT,
+};
