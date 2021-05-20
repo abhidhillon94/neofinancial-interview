@@ -10,7 +10,7 @@ const router = express.Router();
 
 // Routes
 router.get('/', root)
-router.get('/lotteryStatus', schemaValidator(lotteryStatus), getLotteryStatus);
+router.post('/getlotteryStatus', schemaValidator(lotteryStatus), getLotteryStatus);
 
 // Fall Through Route
 router.use(notFound)
