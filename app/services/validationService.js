@@ -3,6 +3,11 @@ const errorConstants = require("../constants/errorConstants");
 
 class ValidationService {
 
+    /**
+     * tests picks against validation rules and returns first encountered validation error
+     * @param {number[]} picks - input picks from request body
+     * @returns {null | {message: string, code: string}} error - first encountered validation error
+     */
     validatePicks = (picks) => {
 
         for (const pick of picks) {

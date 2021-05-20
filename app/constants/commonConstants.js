@@ -1,3 +1,9 @@
+/**
+ * All the app wide constants are put here.
+ * can be split into multiple files like validation constants, dateTime constants 
+ * with futher development in future
+ */
+
 const WHITE_BALL_MIN_LIMIT = 1;
 const WHITE_BALL_MAX_LIMIT = 69;
 const RED_BALL_MIN_LIMIT = 1;

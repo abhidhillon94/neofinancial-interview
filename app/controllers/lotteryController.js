@@ -2,6 +2,10 @@ const lotteryService = require("../services/lotteryService");
 const errorConstants = require("../constants/errorConstants");
 const validationService = require('../services/validationService');
 
+/**
+ * performs any validation which can't be done using schema validator,
+ * fetches data from service and sends response
+ */
 async function getLotteryStatus(req, res, next) {
     const err = validationService.validatePicks(req.body.lotteryTicket.picks);
     if (err) {
