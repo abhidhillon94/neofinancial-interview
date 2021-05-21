@@ -18,15 +18,7 @@ describe('controllers test', () => {
 
     describe('Lottery Controller', () => {
 
-        let validatePicksMock;
-        beforeEach(() => {
-            validatePicksMock = jest.spyOn(validationService, 'validatePicks').mockReturnValue(null);
-        });
-
-        afterEach(() => {
-            lotteryService.getLotteryStatus.mockRestore();
-            validationService.validatePicks.mockRestore();
-        });
+        afterEach(() => lotteryService.getLotteryStatus.mockRestore());
 
         it('should call getLotteryStatusByPicks with picks and draw date from request', async () => {
             const picks = [[1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12]];
@@ -96,11 +88,13 @@ describe('controllers test', () => {
             );
 
             const validationError = { message: 'Invalid whiteball number in pick', code: 'SOME_CODE' };
-            validatePicksMock.mockReturnValue(validationError);
+            jest.spyOn(validationService, 'validatePicks').mockReturnValue(validationError);
 
             await getLotteryStatus({body: { lotteryTicket: { picks, drawDate } }}, res);
 
             expect(res.status.mock.calls[0][0]).toBe(422);
+
+            validationService.validatePicks.mockRestore();
         });
     })
 })

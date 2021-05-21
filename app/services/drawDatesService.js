@@ -103,8 +103,8 @@ class DrawDatesService {
      * @returns {boolean} value indicating if fetching draw dates from public endpoint is required
      */
     isDrawDatesFetchRequired = () => {
-        let lastWednesday = this.getLastOccuranceOfDayOfWeek(commonConstants.DAYS_OF_WEEK.WEDNESDAY);
-        let lastSaturday = this.getLastOccuranceOfDayOfWeek(commonConstants.DAYS_OF_WEEK.SATURDAY);
+        const lastWednesday = this.getLastOccuranceOfDayOfWeek(commonConstants.DAYS_OF_WEEK.WEDNESDAY);
+        const lastSaturday = this.getLastOccuranceOfDayOfWeek(commonConstants.DAYS_OF_WEEK.SATURDAY);
 
         const drawDatePickMap = this.getDrawDateNumbersMap();
         const lastDrawDatesFetchTime = this.getLastDrawDatesFetchTime();
@@ -153,7 +153,6 @@ class DrawDatesService {
     generateWhiteAndRedBallLookup = (winningNumbersText) => {
 
         const whiteBallsMap = {};
-        let redBall;
 
         let numText = '';
         let numsFound = 0;
@@ -169,7 +168,7 @@ class DrawDatesService {
         }
 
         // for red ball which appears at the end of the string
-        redBall = parseInt(numText);
+        const redBall = parseInt(numText);
 
         return {whiteBallsMap, redBall};
     }
