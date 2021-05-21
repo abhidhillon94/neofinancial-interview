@@ -15,8 +15,7 @@
   "scripts": {
     "start": "node index.js",
     "lint": "eslint .",
-    "test": "jest --coverage",
-    "custom": "node ./test/custom.js"
+    "test": "jest --coverage"
   },
   "jest": {
     "verbose": true
