@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "2e4e1818-9a6d-4f57-933e-d74f809bc9db",
+		"name": "interviewl-lottery-status",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "lotteryStatus",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"lotteryTicket\": {\n        \"picks\": [[1, 2, 3, 4, 5, 6], [ 39, 69, 37, 10, 4, 24]],\n        \"drawDate\": \"2021-05-15\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/lotteryStatus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"lotteryStatus"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
